@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corazón Sonoro</title>
+</head>
+<body>
+
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  #corazon {
+    cursor: pointer;
+    font-size: 3em; /* Ajusta el tamaño del corazón cambiando este valor */
+  }
+</style>
+
+<div id="corazon" onclick="toggleSound()">
+  <!-- Puedes usar una imagen de corazón aquí si lo prefieres -->
+  &#x1F496; <!-- Esto representa un emoji de corazón -->
+</div>
+
+<audio id="sonido">
+  <!-- Reemplaza 'ruta_del_sonido.mp3' con la ruta correcta de tu archivo de sonido -->
+  <source src="C:\Users\lucia\OneDrive\Escritorio\a\perrito.mp3" type="audio/mp3">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
+<script>
+  function toggleSound() {
+    var audio = document.getElementById('sonido');
+
+    // Si el audio está reproduciéndose, lo pausamos; de lo contrario, lo reproducimos.
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0; // Reinicia la reproducción al inicio
+    }
+  }
+</script>
+
+</body>
+</html>
